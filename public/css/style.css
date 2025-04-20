@@ -59,7 +59,7 @@ body{
 }
 
 .f-info-socials a:hover {
-
+    color: black !important;
     opacity: 1; /* subtle hover effect, e.g., LinkedIn blue */
 }
 
@@ -231,4 +231,104 @@ body {
 .container {
     flex: 1;
     animation: fadeIn 0.8s ease-in-out; /* Optional: apply to specific containers */
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+
+    #filters {
+        display: none; /* Hide the entire filters section */
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .f-info-socials,
+    .f-info-links {
+        margin: 10px 0;
+    }
+
+    .f-info-socials a {
+        font-size: 18px;
+    }
+
+    .listing-card {
+        margin-bottom: 1rem;
+    }
+
+    #map {
+        height: 300px;
+        width: 100%;
+    }
+
+    .filter {
+        margin-right: 1rem;
+        margin-top: 1rem;
+    }
+
+    .tax-toggle {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #filters {
+        display: none; /* Hide the entire filters section */
+    }
+ 
+    .footer {
+        padding: 15px;
+    }
+
+    .f-info-socials a {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .f-info-brand {
+        font-size: 14px;
+    }
+
+    .f-info-links a {
+        font-size: 14px;
+    }
+
+    .show-img {
+        height: 20vh;
+    }
+
+    #map {
+        height: 200px;
+        width: 100%;
+    }
+
+    .filter {
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .search-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .search-inp {
+        padding: 0.3rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

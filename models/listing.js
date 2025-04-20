@@ -26,7 +26,7 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
-    hostame: {
+    hostname: {
         type: Schema.Types.ObjectId,
         ref: "User",
     },

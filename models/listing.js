@@ -26,9 +26,16 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
-    hostname: String, // Add hostname field
-    hostnumber: String, // Add hostnumber field
-
+    hostname: {
+        type: String,
+        required: true, // Ensure hostname is required
+        trim: true // Optional: Removes extra spaces
+    },
+    hostnumber: {
+        type: String,
+        required: true, // Ensure hostnumber is required
+        match: /^[0-9]+$/ // Optional: Ensure only numbers are allowed
+    },
     geometry: {
         type: {
           type: String, // Don't do `{ location: { type: String } }`

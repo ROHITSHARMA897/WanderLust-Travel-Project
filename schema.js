@@ -8,8 +8,8 @@ module.exports.listingSchema = Joi.object({
         country : Joi.string().required(),
         price : Joi.number().required().min(0),
         image : Joi.string().allow("", null),
-        hostname: Joi.string().required(),
-        hostnumber: Joi.number().required(),
+        hostnumber: Joi.string().pattern(/^[0-9]+$/).required(),
+        hostname: Joi.string().trim().required(),
     }).required()
 });
 

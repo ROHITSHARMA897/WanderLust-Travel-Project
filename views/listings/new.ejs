@@ -41,15 +41,17 @@
             <input name="listing[location]" placeholder="Pune,Delhi" type="text" class="form-control" required>
             <div class="invalid-feedback">Location should be valid</div>
         </div>
-        
+
         <div class="row">
-            <div class="mb-3 col-md-8">
-                <label for="hostname">Host Name</label>
-                <input type="text" id="hostname" name="listing[hostname]" placeholder="Enter Host Name" required>
+            <div class="mb-3 col-md-7">
+                <label for="hostname" class="form-label" >Host Name</label>
+                <input type="text" id="hostname" name="listing[hostname]" placeholder="Enter Host Name" class="form-control"  required>
+                <div class="invalid-feedback">Location should be valid</div>
             </div>
-            <div class="mb-3 col-md-8 ">
-                <label for="hostnumber">Host Number</label>
-                <input type="text" id="hostnumber" name="listing[hostnumber]" placeholder="Enter Host Number" required>
+            <div class="mb-3 col-md-5">
+                <label for="hostnumber" class="form-label" >Host Number</label>
+                <input type="text" id="hostnumber" name="listing[hostnumber]" placeholder="Enter Host Number" class="form-control"  required>
+                <div class="invalid-feedback">Please enter a valid host number</div>
             </div>
         </div>
         <button class="btn btn-dark add-btn mb-3">Add</button>

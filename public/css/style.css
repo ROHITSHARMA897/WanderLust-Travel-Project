@@ -30,8 +30,8 @@ body{
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #222222;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@ body{
 }
 
 .f-info-socials a:hover {
-    color: #007bff; /* Highlight color on hover */
+    opacity: 0.4; /* Highlight color on hover */
 }
 
 .f-info-brand {
@@ -66,15 +66,16 @@ body{
 }
 
 .f-info-links a {
-    color: #fff;
+    color: #222222;
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .f-info-links a:hover {
-    color: #007bff; /* Highlight color on hover */
+    opacity: 0.4; /* Highlight color on hover */
 }
+
 /* Cards */
 .listing-card{
    border: none !important;
@@ -143,4 +144,31 @@ body{
 #map { 
     height: 400px; 
     width: 80vh; 
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Optional: slight slide effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the body or main container */
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.8s ease-in-out; /* Animation applied here */
+}
+
+.container {
+    flex: 1;
+    animation: fadeIn 0.8s ease-in-out; /* Optional: apply to specific containers */
 }

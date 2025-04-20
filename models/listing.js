@@ -31,7 +31,7 @@ const listingSchema = new Schema({
        
     },
     hostnumber: {
-        type: String,
+        type: Number,
     
     },
     geometry: {

@@ -51,16 +51,9 @@
         </div>
         <div class="mb-3">
             <label for="hostnumber" class="form-label">Hostnumber</label>
-            <input id="hostnumber" name="listing[hostnumber]" value="<%=listing.hostnumber%>" type="tel" class="form-control" required>
-
+            <input id="hostnumber" name="listing[hostnumber]" value="<%=listing.hostnumber%>" type="tel" class="form-control" required pattern="\d{10}">
             <div class="invalid-feedback">Host number should be valid</div>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Original Listing Image</label><br>
-            <img src="<%= originalImageUrl %>" class="img-fluid rounded" style="max-height: 300px;">
-        </div>
-        
-        
           <button class="btn btn-dark edit-btn mb-3">Edit</button>
     </form>
 </div> 

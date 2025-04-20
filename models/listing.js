@@ -37,14 +37,7 @@ const listingSchema = new Schema({
           required: true
         }
       },
-      hostName: {
-          type: String,
-          required: true
-      },
-      hostContact: {
-          type: String,
-          required: true
-      }
+  
 });
 
 listingSchema.post("findOneAndDelete", async(listing) =>{

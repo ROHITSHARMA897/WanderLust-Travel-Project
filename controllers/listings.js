@@ -37,8 +37,6 @@ module.exports.createListing =  async (req, res, next)=>{
     let filename= req.file.filename;
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
-    newListing.hostName = req.user.username;
-    newListing.hostContact = req.user.hostContact;
     newListing.image = {url, filename};
     newListing.geometry = response.body.features[0].geometry;
     let savedListing = await newListing.save();

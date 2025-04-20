@@ -36,6 +36,14 @@ const listingSchema = new Schema({
           type: [Number],
           required: true
         }
+      },
+      hostName: {
+          type: String,
+          required: true
+      },
+      hostContact: {
+          type: String,
+          required: true
       }
 });
 

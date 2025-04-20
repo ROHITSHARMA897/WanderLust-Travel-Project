@@ -41,6 +41,20 @@
             <input name="listing[location]" placeholder="Pune,Delhi" type="text" class="form-control" required>
             <div class="invalid-feedback">Location should be valid</div>
         </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="hostName" class="form-label">Host Name</label>
+                <input name="listing[hostName]" type="text" placeholder="Enter Host Name" class="form-control" required>
+                <div class="invalid-feedback">Name should be valid</div>
+            </div>
+    
+            <div class="mb-3 col-md-8">
+                <label for="hostContact" class="form-label">Contact</label>
+                <input name="listing[hostContact]" placeholder="Add phone number" type="text" class="form-control" required>
+                <div class="invalid-feedback">Contact number should be valid</div>
+            </div>
+        </div>
         
         <button class="btn btn-dark add-btn mb-3">Add</button>
     </form>

@@ -3,7 +3,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 60px; 
+    padding-bottom: 5rem; 
 }
 
 .container{
@@ -40,7 +40,8 @@ body{
     align-items: center;
     font-size: 14px;
     z-index: 1000;
-    margin-top: 20px;
+    margin-top: 5rem;
+    border-top: 1px solid #ccc; 
 }
 
 

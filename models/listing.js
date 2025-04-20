@@ -27,12 +27,12 @@ const listingSchema = new Schema({
         ref: "User",
     },
     hostname: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+        type: String,
+        required: true,
     },
     hostnumber: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+        type: String,
+        required: true,
     },
     geometry: {
         type: {

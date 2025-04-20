@@ -26,6 +26,14 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
+    hostame: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+    },
+    hostnumber: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+    },
     geometry: {
         type: {
           type: String, // Don't do `{ location: { type: String } }`

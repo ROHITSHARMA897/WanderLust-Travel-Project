@@ -188,7 +188,7 @@ padding: 0 !important;
 
 /* for host card */
 .unique-card {
-    border: 1px solid #000000; /* Blue border for distinction */
+    border: 1px solid #ccc; /* Blue border for distinction */
     border-radius: 10px; /* Rounded corners */
     padding: 15px;
     background-color: #f9f9f9; /* Light background color */
@@ -317,5 +317,16 @@ body {
     .search-inp {
         padding: 0.3rem 1.5rem;
         font-size: 0.9rem;
+    }
+    .starability-slot {
+        font-size: 1.2rem; /* Reduce the size of stars for smaller screens */
+        margin: 5px 0; /* Adjust margin for better spacing */
+        display: flex;
+        justify-content: center; /* Center the stars horizontally */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+    }
+
+    .starability-slot label {
+        margin-right: 3px; /* Reduce spacing between stars */
     }
 }

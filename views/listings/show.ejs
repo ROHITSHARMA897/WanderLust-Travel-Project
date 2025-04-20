@@ -73,9 +73,11 @@
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
                     <p class="card-text"><%= review.comment %></p>
                  </div>
-                 <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=delete" method="POST" class="mb-3"><br>
-                    <button class="btn btn-sm btn-dark">Delete</button>
-                </form>
+                 <% if (currUser) { %>
+                    <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=delete" method="POST" class="mb-3"><br>
+                       <button class="btn btn-sm btn-dark">Delete</button>
+                     </form>
+                 <% } %>
                </div>
              <% } %>
          </div> 
@@ -88,13 +90,10 @@
 </div>
 
 <script src="/js/map.js"></script>
-
-<% if (currUser) { %>
+<hr>
     <div class="card col-6 offset-3 show-card listing-card">
         <div class="card-body">
             <p class="card-text"><b>Host:</b> <%= listing.hostname  %></p>    
             <p class="card-text"><b>Phone:</b> <%= listing.hostnumber  %></p>    
         </div>
     </div>
-    <% } %>
-    

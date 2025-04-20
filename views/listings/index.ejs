@@ -91,6 +91,7 @@
     <% } %>   
 </div>
 
+
 <script>
     // Select all filter elements
     const filters = document.querySelectorAll('.filter');
@@ -99,34 +100,31 @@
     const listings = document.querySelectorAll('.listing-link');
 
     // Select the container for listings
-    const listingsContainer = document.querySelector('.row');
+    const listingsContainer = document.getElementById('listings-container');
+
+    // Function to shuffle an array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
 
     // Add click event listeners to each filter
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
-            // Get the text inside the <p> tag of the clicked filter
-            const filterText = filter.querySelector('p').innerText.toLowerCase();
+            // Convert NodeList to an array for shuffling
+            const listingsArray = Array.from(listings);
 
-            // Create arrays for matching and non-matching listings
-            const matchingListings = [];
-            const nonMatchingListings = [];
-
-            // Loop through all listings and categorize them
-            listings.forEach(listing => {
-                const listingTitle = listing.querySelector('.card-text b').innerText.toLowerCase();
-                if (listingTitle.includes(filterText)) {
-                    matchingListings.push(listing);
-                } else {
-                    nonMatchingListings.push(listing);
-                }
-            });
+            // Shuffle the listings array
+            const shuffledListings = shuffleArray(listingsArray);
 
             // Clear the listings container
             listingsContainer.innerHTML = '';
 
-            // Append matching listings first, then non-matching listings
-            matchingListings.forEach(listing => listingsContainer.appendChild(listing));
-            nonMatchingListings.forEach(listing => listingsContainer.appendChild(listing));
+            // Append the shuffled listings to the container
+            shuffledListings.forEach(listing => listingsContainer.appendChild(listing));
         });
     });
 </script>

@@ -184,6 +184,15 @@ margin: 0  !important;
 padding: 0 !important;
 }
 
+/* for host card */
+.unique-card {
+    border: 3px solid #007bff; /* Blue border for distinction */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background color */
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from {

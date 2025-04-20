@@ -28,11 +28,11 @@ const listingSchema = new Schema({
     },
     hostname: {
         type: String,
-        required: true,
+       
     },
     hostnumber: {
         type: String,
-        required: true,
+    
     },
     geometry: {
         type: {

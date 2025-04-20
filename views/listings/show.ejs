@@ -12,7 +12,7 @@
         <img src="<%= listing.image.url  %>" alt="<%= listing.title  %>" 
             class="card-img-top show-img">
         <div class="card-body"><br>
-            <p class="card-text">Owned by <i><%= listing.owner.username  %></i></p>
+        
             <p class="card-text"><%= listing.description %></p>
             <p class="card-text">&#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : 'N/A' %></p>
             <p class="card-text"><%= listing.location  %></p>    
@@ -92,8 +92,8 @@
 <% if (currUser) { %>
     <div class="card col-6 offset-3 show-card listing-card">
         <div class="card-body">
-            <p class="card-text"><strong>Host:</strong> <%= listing.hostname  %></p>    
-            <p class="card-text"><strong>Phone:</strong> <%= listing.hostnumber  %></p>    
+            <p class="card-text"><b>Host:</b> <%= listing.hostname  %></p>    
+            <p class="card-text"><b>Phone:</b> <%= listing.hostnumber  %></p>    
         </div>
     </div>
     <% } %>

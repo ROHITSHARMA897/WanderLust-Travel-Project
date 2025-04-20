@@ -3,6 +3,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-bottom: 60px; 
 }
 
 .container{
@@ -25,11 +26,12 @@ body{
     color: #222222 !important;
 }
 
-
+/* footer */
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 5rem;
     background-color: #ffffff;
     color: #222222;
     padding: 10px 20px;
@@ -38,43 +40,58 @@ body{
     align-items: center;
     font-size: 14px;
     z-index: 1000;
+    margin-top: 20px;
 }
 
+/* Ensure company name appears first */
 .f-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-direction: row; /* Default row layout */
+}
+
+.f-info-brand {
+    font-weight: bold;
+    text-align: left;
+    margin-right: auto; /* Push other elements to the right */
+    font-size: 16px; /* Slightly larger font for emphasis */
+}
+
+.f-info-socials {
+    display: flex;
+    gap: 15px; /* Add spacing between social icons */
+    margin-right: 20px; /* Add spacing between socials and links */
 }
 
 .f-info-socials a {
-    color: #fff;
-    margin: 0 10px;
+    color: #222222;
     font-size: 20px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .f-info-socials a:hover {
-    opacity: 0.4; /* Highlight color on hover */
+    opacity: 0.2; /* Slightly reduce opacity on hover */
 }
 
-.f-info-brand {
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
+.f-info-links {
+    display: flex;
+    gap: 15px; /* Add spacing between links */
 }
 
 .f-info-links a {
     color: #222222;
-    margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 14px;
 }
 
 .f-info-links a:hover {
-    opacity: 0.4; /* Highlight color on hover */
+    opacity: 0.2; /* Slightly reduce opacity on hover */
 }
+    
 
 /* Cards */
 .listing-card{

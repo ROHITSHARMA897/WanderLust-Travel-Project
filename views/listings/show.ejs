@@ -73,7 +73,7 @@
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
                     <p class="card-text"><%= review.comment %></p>
                  </div>
-                 <% if (currUser) { %>
+                 <% if(currUser &&  listing.owner._id.equals(currUser._id)) {%>
                     <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=delete" method="POST" class="mb-3"><br>
                        <button class="btn btn-sm btn-dark">Delete</button>
                      </form>
@@ -93,7 +93,7 @@
 <hr>
     <div class="card col-6 offset-3 show-card listing-card">
         <div class="card-body">
-            <p class="card-text"><b>Host:</b> <%= listing.hostname  %></p>    
-            <p class="card-text"><b>Phone:</b> <%= listing.hostnumber  %></p>    
+            <p class="card-text"><b>Host By</b> <%= listing.hostname  %></p>    
+            <p class="card-text"><b>Phone Number</b> <%= listing.hostnumber  %></p>    
         </div>
     </div>

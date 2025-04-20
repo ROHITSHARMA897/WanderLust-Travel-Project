@@ -37,8 +37,8 @@ module.exports.createListing =  async (req, res, next)=>{
     let filename= req.file.filename;
     const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
-    newListing.hostname = req.user.username; // or req.user.name (whatever field your User model uses for display name)
-    newListing.hostnumber = req.user.phone;  // assuming your User model has a `phone` field
+    newListing.hostname = req.body.hostname; // Picking hostname
+    newListing.hostnumber = req.body.hostnumber; // Picking hostnumber
     newListing.image = {url, filename};
     newListing.geometry = response.body.features[0].geometry;
     let savedListing = await newListing.save();

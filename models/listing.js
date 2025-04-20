@@ -26,14 +26,9 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
-    hostname: {
-        type: String,
-       
-    },
-    hostnumber: {
-        type: Number,
-    
-    },
+    hostname: String, // Add hostname field
+    hostnumber: String, // Add hostnumber field
+
     geometry: {
         type: {
           type: String, // Don't do `{ location: { type: String } }`

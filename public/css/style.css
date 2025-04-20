@@ -129,7 +129,7 @@ body{
 /* Map */
 #map { 
     height: 400px; 
-    width: 95vh; 
+    width: 90vh; 
     border: 1px solid #ccc; /* Optional: Add a border for better visibility */
     border-radius: 10px; /* Optional: Add rounded corners */
 }
@@ -190,7 +190,6 @@ padding: 0 !important;
 .unique-card {
     border: 1px solid #000000; /* Blue border for distinction */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
     padding: 15px;
     background-color: #f9f9f9; /* Light background color */
 }

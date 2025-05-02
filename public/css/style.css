@@ -334,7 +334,8 @@ body {
 /* For screens larger than 769px */
 @media (min-width: 769px) {
     #map {
-        height: 400px; /* Default height for larger screens */
+
+        height: 300px;
         width: 80%; /* Adjust width to fit the container */
         margin: 0 auto; /* Center the map horizontally */
         border: 1px solid #ccc; /* Optional: Add a border for better visibility */

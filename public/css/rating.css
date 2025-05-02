@@ -195,3 +195,73 @@
   -webkit-transition: background-position .7s;
   transition: background-position .7s;
 }
+
+/* Default styles for the starability container */
+.starability-slot {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem; /* Default size for stars */
+  color: #ccc; /* Default color for unselected stars */
+  margin: 10px 0;
+  text-align: center;
+  width: 100%; /* Ensure it fits within the container */
+}
+
+/* Hide the radio buttons */
+.starability-slot input[type="radio"] {
+  display: none;
+}
+
+/* Style for the labels (stars) */
+.starability-slot label {
+  display: inline-block;
+  cursor: pointer;
+  color: #ccc; /* Default color for unselected stars */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Change color of stars when hovered */
+.starability-slot label:hover,
+.starability-slot label:hover ~ label {
+  color: #ffcc00; /* Hover color for stars */
+}
+
+/* Change color of stars when selected */
+.starability-slot input[type="radio"]:checked ~ label {
+  color: #ffcc00; /* Selected color for stars */
+}
+
+/* Add spacing between stars */
+.starability-slot label {
+  margin-right: 5px;
+}
+
+/* Responsive styles for devices with max-width 768px */
+@media (max-width: 768px) {
+  .starability-slot {
+      font-size: 1.2rem; /* Reduce the size of stars for tablets */
+      margin: 5px 0; /* Adjust margin for better spacing */
+      display: flex;
+      justify-content: center; /* Center the stars horizontally */
+      flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .starability-slot label {
+      margin-right: 3px; /* Reduce spacing between stars */
+  }
+}
+
+/* Responsive styles for devices with max-width 480px */
+@media (max-width: 480px) {
+  .starability-slot {
+      font-size: 1rem; /* Further reduce the size of stars for mobile */
+      margin: 5px 0; /* Adjust margin for better spacing */
+      display: flex;
+      justify-content: center; /* Center the stars horizontally */
+      flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+
+  .starability-slot label {
+      margin-right: 2px; /* Reduce spacing between stars */
+  }
+}

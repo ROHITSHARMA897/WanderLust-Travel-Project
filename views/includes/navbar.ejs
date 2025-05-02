@@ -37,6 +37,15 @@
         <a class="nav-link" href="/listings">Explore</a>
       </div>
       <div class="navbar-nav ms-auto ">
+       <!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="searchModalLabel">Search Listings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
         <form class="d-flex" role="search" action="/listings" method="GET">
           <input 
             class="form-control me-2 search-inp" 
@@ -50,10 +59,19 @@
               <option value="<%= listing.title %>"></option>
             <% }); %>
           </datalist>
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
+          <button class="btn search-btn mt-3 w-100" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
           </button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger Button for Search Modal -->
+<button class="btn search-btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+  <i class="fa-solid fa-magnifying-glass"></i> Search
+</button>
       </div>
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Wanderlust your home</a>

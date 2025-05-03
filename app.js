@@ -114,41 +114,6 @@ app.use((err, req, res , next) => {
     res.status(statusCode).render("error.ejs", { message });
     // res.status(statusCode).send(message);
 });
-app.get('/listings/search', async (req, res) => {
-    const query = req.query.query;
-
-    try {
-        // Find the listing by title
-        const listing = await Listing.findOne({ title: query });
-
-        if (listing) {
-            // Redirect to the listing's show page
-            res.redirect(`/listings/${listing._id}`);
-        } else {
-            // If no listing is found, redirect back with an error message
-            req.flash('error', 'Listing not found');
-            res.redirect('/listings');
-        }
-    } catch (err) {
-        console.error(err);
-        req.flash('error', 'Something went wrong');
-        res.redirect('/listings');
-    }
-});
-app.get('/listings/:id', async (req, res) => {
-    try {
-        const listing = await Listing.findById(req.params.id).populate('owner').populate('reviews');
-        if (!listing) {
-            req.flash('error', 'Listing not found');
-            return res.redirect('/listings');
-        }
-        res.render('listings/show', { listing });
-    } catch (err) {
-        console.error(err);
-        req.flash('error', 'Invalid listing ID');
-        res.redirect('/listings');
-    }
-});
 
 app.listen(8080, ()=>{
     console.log("Server is listening to port 8080");

@@ -115,6 +115,12 @@ app.use((err, req, res , next) => {
     // res.status(statusCode).send(message);
 });
 
+const listings = require('./controllers/listings');
+
+// Route for searching listings
+app.get('/listings/search', listings.searchListing);
+
+
 app.listen(8080, ()=>{
     console.log("Server is listening to port 8080");
 });

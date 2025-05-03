@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate") %>
+<script>
+    const mapToken ="<%= process.env.MAP_TOKEN %>";
+    const listing = <%- JSON.stringify(listing) %>;
+</script>
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+    <div class="col-6 offset-3">
+        <h3><%= listing.title %></h3>
+        <img src="<%= listing.image.url %>" alt="<%= listing.title %>" class="img-fluid mb-3">
+        <p><b>Owned By:</b> <%= listing.owner.username %></p>
+        <p><b>Description:</b> <%= listing.description %></p>
+        <p><b>Price:</b> &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night</p>
+        <p><b>Location:</b> <%= listing.location %></p>
+        <p><b>Country:</b> <%= listing.country %></p>
+    </div>
+</div>

@@ -115,3 +115,18 @@ app.use((err, req, res , next) => {
 app.listen(8080, ()=>{
     console.log("Server is listening to port 8080");
 });
+
+app.get('/listings/search', async (req, res) => {
+    const query = req.query.query;
+
+    // Find the listing by title
+    const listing = await Listing.findOne({ title: query });
+
+    if (listing) {
+        // Render the search.ejs page with the listing data
+        res.render('listings/search', { listing });
+    } else {
+        // If no listing is found, redirect back with an error message
+        res.redirect('/listings?error=Listing not found');
+    }
+});

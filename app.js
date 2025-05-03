@@ -20,7 +20,10 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const { setAllListings } = require("./middleware");
 
+// Use the middleware to set allListings globally
+app.use(setAllListings);
 
 const dbUrl = process.env.ATLAS_URL ;
 

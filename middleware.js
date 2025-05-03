@@ -60,3 +60,13 @@ module.exports.isReviewAuthor = async (req, res, next) => {
     }
     next();
 } 
+
+// Middleware to make allListings available globally
+module.exports.setAllListings = async (req, res, next) => {
+    try {
+        res.locals.allListings = await Listing.find({});
+        next();
+    } catch (err) {
+        next(err); // Pass any errors to the error handler
+    }
+};

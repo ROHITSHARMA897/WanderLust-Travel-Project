@@ -16,6 +16,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const listings = require('./controllers/listings');
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -115,10 +116,11 @@ app.use((err, req, res , next) => {
     // res.status(statusCode).send(message);
 });
 
-const listings = require('./controllers/listings');
 
 // Route for searching listings
-app.get('/listings/search', listings.searchListing);
+app.get('/listings/search', (req,res)=>{
+    res.send("search page");
+});
 
 
 app.listen(8080, ()=>{

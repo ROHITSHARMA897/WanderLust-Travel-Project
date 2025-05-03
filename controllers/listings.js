@@ -82,24 +82,24 @@ module.exports.destroyListing =  async(req, res)=>{
     res.redirect("/listings");
 };
 
-module.exports.searchListing = async (req, res) => {
-    const query = req.query.query;
+// module.exports.searchListing = async (req, res) => {
+//     const query = req.query.query;
 
-    try {
-        // Find the listing by title
-        const listing = await Listing.findOne({ title: query });
+//     try {
+//         // Find the listing by title
+//         const listing = await Listing.findOne({ title: query });
 
-        if (listing) {
-            // Redirect to the listing's show page
-            res.redirect(`/listings/${listing._id}`);
-        } else {
-            // If no listing is found, redirect back with an error message
-            req.flash('error', 'Listing not found');
-            res.redirect('/listings');
-        }
-    } catch (err) {
-        console.error(err);
-        req.flash('error', 'Something went wrong');
-        res.redirect('/listings');
-    }
-};
+//         if (listing) {
+//             // Redirect to the listing's show page
+//             res.redirect(`/listings/${listing._id}`);
+//         } else {
+//             // If no listing is found, redirect back with an error message
+//             req.flash('error', 'Listing not found');
+//             res.redirect('/listings');
+//         }
+//     } catch (err) {
+//         console.error(err);
+//         req.flash('error', 'Something went wrong');
+//         res.redirect('/listings');
+//     }
+// };

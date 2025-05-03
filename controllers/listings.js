@@ -82,24 +82,16 @@ module.exports.destroyListing =  async(req, res)=>{
     res.redirect("/listings");
 };
 
-// module.exports.searchListing = async (req, res) => {
-//     const query = req.query.query;
-
-//     try {
-//         // Find the listing by title
-//         const listing = await Listing.findOne({ title: query });
-
-//         if (listing) {
-//             // Redirect to the listing's show page
-//             res.redirect(`/listings/${listing._id}`);
-//         } else {
-//             // If no listing is found, redirect back with an error message
-//             req.flash('error', 'Listing not found');
-//             res.redirect('/listings');
-//         }
-//     } catch (err) {
-//         console.error(err);
-//         req.flash('error', 'Something went wrong');
-//         res.redirect('/listings');
-//     }
-// };
+module.exports.searchListing = async (req, res) => {
+    let {id}= req.params;
+    const listing = await Listing.findById(id)
+    .populate({
+        path :"reviews",
+        populate: { path: "author" }}).populate("owner");
+    if(!listing){
+        req.flash("error", "Listing you requested for does not exist!");
+        res.redirect("/listings");
+    }
+    // console.log(listing);
+    res.render("listings/show.ejs",{listing});
+};

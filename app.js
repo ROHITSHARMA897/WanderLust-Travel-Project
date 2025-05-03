@@ -118,9 +118,7 @@ app.use((err, req, res , next) => {
 
 
 // Route for searching listings
-app.get('/listings/search', (req,res)=>{
-    res.send("search page");
-});
+app.get('/listings/:id', searchListing);
 
 
 app.listen(8080, ()=>{

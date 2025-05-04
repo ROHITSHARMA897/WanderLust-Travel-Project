@@ -82,16 +82,23 @@ module.exports.destroyListing =  async(req, res)=>{
     res.redirect("/listings");
 };
 
-module.exports.searchListing = async (req, res) => {
-    let {id}= req.params;
-    const listing = await Listing.findById(id)
-    .populate({
-        path :"reviews",
-        populate: { path: "author" }}).populate("owner");
-    if(!listing){
-        req.flash("error", "Listing you requested for does not exist!");
-        res.redirect("/listings");
+module.exports.index = async (req, res) => {
+    const query = req.query.query; // Get the search query from the form
+    let allListings = await Listing.find({}); // Fetch all listings
+
+    if (query) {
+        // Find the listing that matches the search query
+        const matchingListing = allListings.find(listing => listing.title.toLowerCase() === query.toLowerCase());
+
+        if (matchingListing) {
+            // Remove the matching listing from the array
+            allListings = allListings.filter(listing => listing._id.toString() !== matchingListing._id.toString());
+
+            // Add the matching listing to the top of the array
+            allListings.unshift(matchingListing);
+        }
     }
-    // console.log(listing);
-    res.render("listings/show.ejs",{listing});
+
+    // Render the listings page with the reordered listings
+    res.render('listings/index', { allListings });
 };

@@ -116,9 +116,10 @@ app.use((err, req, res , next) => {
     // res.status(statusCode).send(message);
 });
 
+const listings = require('./controllers/listings');
 
-// Route for searching listings
-app.get('/listings/:id', searchListing);
+// Route for displaying listings
+app.get('/listings', listings.index);
 
 
 app.listen(8080, ()=>{

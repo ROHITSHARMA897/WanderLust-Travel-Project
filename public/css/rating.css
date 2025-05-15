@@ -76,13 +76,15 @@
   cursor: default;
 }
 
-.starability-slot > input:not([disabled]):hover ~ label {
+.starability-slot > label {
+  background-position: 0 -30px;
+}
+
+.starability-slot > label:hover,
+.starability-slot > label:hover ~ label {
   background-position: 0 0;
 }
 
-.starability-slot > input:not([disabled]):hover + label {
-  background-position: 0 -30px;
-}
 
 .starability-slot > input:not([disabled]):hover + label::before {
   opacity: 1;

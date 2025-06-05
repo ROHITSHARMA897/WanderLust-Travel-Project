@@ -6,12 +6,12 @@
 
 🌍 Features:
 
-Add, view, edit, and delete listings
+1. Add, view, edit, and delete listings
 
-Upload images and display them in listings
+2. Upload images and display them in listings
 
-Host info with contact details
+3. Host info with contact details
 
-Rating and review system
+4. Rating and review system
 
-Live map integration for location context
+5. Live map integration for location context

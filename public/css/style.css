@@ -220,6 +220,9 @@ body {
     animation: fadeIn 0.8s ease-in-out; /* Optional: apply to specific containers */
 }
 
+.host-info{
+    border: none !important;
+}
 /* For tablets and smaller devices */
 @media (max-width: 768px) {
     .navbar {
